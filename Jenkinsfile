@@ -6,8 +6,7 @@ pipeline {
     stages {
         stage('Construct') {
             steps {
-                sh 'npm install'
-                sh '<<Build Command>>'
+                bat 'npm install'
             }
         }
         stage('Estático') {
@@ -17,8 +16,7 @@ pipeline {
         }
         stage('Unitarias') {
             steps {
-                sh 'npm test'
-                echo 'Pruebas unitarias'
+                bat 'npm test'
             }
         }
         stage('Funcionales') {
