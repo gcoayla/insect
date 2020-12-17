@@ -1,12 +1,13 @@
 pipeline {
     agent any
     
-    tools{nodejs "node"}
+    tools{nodejs "nodeins"}
 
     stages {
         stage('Construct') {
             steps {
                 sh 'npm install'
+                sh '<<Build Command>>'
             }
         }
         stage('Estático') {
