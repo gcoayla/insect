@@ -11,7 +11,9 @@ pipeline {
         }
         stage('Estático') {
             steps {
-                echo 'Análisis estático'
+                withSonarQubeEnv('My SonarQube Server') {
+                    bat 'sonar-scanner'
+                }
             }
         }
         stage('Unitarias') {
