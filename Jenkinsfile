@@ -11,7 +11,9 @@ pipeline {
         }
         stage('Estático') {
             steps {
+                withSonarQubeEnv('sonarscaner') {
                  bat 'sonar-scanner'
+                }
             }
         }
         stage('Unitarias') {
