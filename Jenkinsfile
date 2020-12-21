@@ -11,10 +11,11 @@ pipeline {
         }
         stage('Estático') {
             steps {
-                def scannerHome = tool 'sonarscaner';
+            script {
                 withSonarQubeEnv('sonarserver') {
-                 bat "${scannerHome}/bin/sonar-scanner"
+                 bat "${tool("sonarscaner")}/bin/sonar-scanner"
                 }
+            }
             }
         }
         stage('Unitarias') {
