@@ -20,7 +20,9 @@ pipeline {
         }
         stage('Unitarias') {
             steps {
-                bat 'npm test'
+                bat 'npm run setup'
+                bat 'pulp build -m Insect'
+                bat 'pulp test'
             }
         }
         stage('Funcionales') {
