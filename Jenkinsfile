@@ -29,10 +29,5 @@ pipeline {
                 echo 'Pruebas funcionales'
             }
         }
-        stage('Docker') {
-            steps {
-                echo 'Dockerización'
-            }
-        }
     }
 }
