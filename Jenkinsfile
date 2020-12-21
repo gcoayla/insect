@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Estático') {
             steps {
-                withSonarQubeEnv('My SonarQube Server') {
+                withSonarQubeEnv('sonarscaner') {
                     bat 'sonar-scanner'
                 }
             }
