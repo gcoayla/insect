@@ -11,8 +11,9 @@ pipeline {
         }
         stage('Estático') {
             steps {
-                withSonarQubeEnv('sonarscaner') {
-                 bat 'sonar-scanner'
+                def scannerHome = tool 'sonarscaner';
+                withSonarQubeEnv('sonarserver') {
+                 bat "${scannerHome}/bin/sonar-scanner"
                 }
             }
         }
