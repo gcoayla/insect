@@ -24,10 +24,5 @@ pipeline {
                 bat 'npm test'
             }
         }
-        stage('Funcionales') {
-            steps {
-                echo 'Pruebas funcionales'
-            }
-        }
     }
 }
